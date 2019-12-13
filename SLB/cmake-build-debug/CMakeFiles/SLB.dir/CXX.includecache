@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/maziy/CLionProjects/SLB/RandomPacketGenerator.cpp
+ctime
+-
+cstdlib
+-
+RandomPacketGenerator.h
+/cygdrive/c/Users/maziy/CLionProjects/SLB/RandomPacketGenerator.h
+
+/cygdrive/c/Users/maziy/CLionProjects/SLB/RandomPacketGenerator.h
+vector
+-
+pkt.h
+/cygdrive/c/Users/maziy/CLionProjects/SLB/pkt.h
+
+/cygdrive/c/Users/maziy/CLionProjects/SLB/pkt.h
+stdint-gcc.h
+-
+

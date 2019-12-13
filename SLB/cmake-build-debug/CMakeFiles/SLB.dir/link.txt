@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -g  -Wl,--enable-auto-import CMakeFiles/SLB.dir/main.cpp.o CMakeFiles/SLB.dir/Server.cpp.o CMakeFiles/SLB.dir/LoadBalancer.cpp.o CMakeFiles/SLB.dir/RandomPacketGenerator.cpp.o  -o SLB.exe -Wl,--out-implib,libSLB.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
