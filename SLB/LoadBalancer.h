@@ -14,16 +14,19 @@
 using namespace std;
 
 
-typedef struct pkt5tuple {
+
+
+typedef  struct pkt5tuple_private pkt5tuple;
+struct pkt5tuple_private {
     uint32_t srcIp;
     uint32_t dstIp;
     uint32_t srcPort;
     uint32_t dstPort;
     uint32_t protocol;
 
-    pkt5tuple() {}
+    pkt5tuple_private() {}
 
-    pkt5tuple(uint32_t srcIp_, uint32_t dstIp_, uint32_t srcPort_, uint32_t dstPort_, uint32_t protocol_) :
+    pkt5tuple_private(uint32_t srcIp_, uint32_t dstIp_, uint32_t srcPort_, uint32_t dstPort_, uint32_t protocol_) :
             srcIp(srcIp_),
             dstIp(dstIp_),
             srcPort(srcPort_),
@@ -54,15 +57,39 @@ typedef struct pkt5tuple {
     {
         return c1.srcIp >= srcIp;
     }
-}pkt5Tuple;
+};
+
+namespace std {
+    template<>
+    struct hash<pkt5tuple>
+    {
+        std::size_t operator()(const pkt5tuple& k) const
+        {
+            using std::size_t;
+            using std::hash;
+
+            // Compute individual hash values for first,
+            // second and third and combine them using XOR
+            // and bit shifting:
+
+            return hash<uint32_t >()(k.srcIp)
+                   ^ hash<uint32_t >()(k.dstIp)
+                   ^ hash<uint32_t >()(k.srcPort)
+                   ^ hash<uint32_t >()(k.dstPort)
+                   ^ hash<uint32_t >()(k.dstPort);
+        }
+    };
+}
+
 
 class LoadBalancer {
 private:
 
-    map<pkt5tuple, Server*> flow_server_map;
+    unordered_map<pkt5tuple, Server*> flow_server_map;
     vector<Server*> Servers;
     uint8_t round_robin_counter;
     ofstream SLB_trace;
+    uint32_t counter[6] = {0,0,0,0,0,0};
 public:
     LoadBalancer(vector<Server*> servers, string log_file) : Servers(servers), round_robin_counter(0), SLB_trace(ofstream(log_file, ios::binary)) {}
 
@@ -74,6 +101,9 @@ public:
     void log_pkt(struct pv_net_pkt* out_pkt);
 
     void close_log_file() {SLB_trace.close();}
+
+    void print_counter(){cout << "[INFO] server1: " << counter[0]+1 << " server2: " << counter[1]+1 << " server3: " << counter[2]+1 << " server4: " << counter[3]+1 <<
+    " server5: " << counter[4]+1 << " server6: " << counter[5]+1 << endl;}
 };
 
 

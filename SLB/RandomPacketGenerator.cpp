@@ -22,6 +22,7 @@ struct pkt* RandomPacketGenerator::generate() {
     p->srcPort = srcPorts [srcPort];
     p->dstPort = dstPorts[dstPort];
     p->protocol = protos[proto];
-
+    for(int i = 0; i<256; i++)
+        p->payload[i] = 'a' + i%26;
     return p;
 }

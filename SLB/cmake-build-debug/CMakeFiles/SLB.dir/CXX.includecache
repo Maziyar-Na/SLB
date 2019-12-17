@@ -6,6 +6,26 @@
 
 #IncludeRegexTransform: 
 
+/cygdrive/c/Users/maziy/CLionProjects/SLB/LoadBalancer.cpp
+iostream
+-
+LoadBalancer.h
+/cygdrive/c/Users/maziy/CLionProjects/SLB/LoadBalancer.h
+pkt.h
+/cygdrive/c/Users/maziy/CLionProjects/SLB/pkt.h
+
+/cygdrive/c/Users/maziy/CLionProjects/SLB/LoadBalancer.h
+vector
+-
+map
+-
+fstream
+-
+unordered_map
+-
+Server.h
+/cygdrive/c/Users/maziy/CLionProjects/SLB/Server.h
+
 /cygdrive/c/Users/maziy/CLionProjects/SLB/RandomPacketGenerator.cpp
 ctime
 -
@@ -19,6 +39,10 @@ vector
 -
 pkt.h
 /cygdrive/c/Users/maziy/CLionProjects/SLB/pkt.h
+
+/cygdrive/c/Users/maziy/CLionProjects/SLB/Server.h
+stdint-gcc.h
+-
 
 /cygdrive/c/Users/maziy/CLionProjects/SLB/pkt.h
 stdint-gcc.h
