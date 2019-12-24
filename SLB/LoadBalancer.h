@@ -10,6 +10,7 @@
 #include <fstream>
 #include <unordered_map>
 #include "Server.h"
+#include "pkt.h"
 
 using namespace std;
 
@@ -89,21 +90,25 @@ private:
     vector<Server*> Servers;
     uint8_t round_robin_counter;
     ofstream SLB_trace;
-    uint32_t counter[6] = {0,0,0,0,0,0};
+    uint64_t counter[6] = {0,0,0,0,0,0};
+    uint64_t num_of_gpvs = 0;
+
 public:
     LoadBalancer(vector<Server*> servers, string log_file) : Servers(servers), round_robin_counter(0), SLB_trace(ofstream(log_file, ios::binary)) {}
 
     vector<Server*> get_servers() { return Servers; }
     void add_server(Server* s){ Servers.push_back(s); }
 
-    struct pv_net_pkt* process_pkt(struct pkt* input_pkt);
+    struct gpv::gpv_t* process_pkt(struct gpv::gpv_t * input_pkt);
 
-    void log_pkt(struct pv_net_pkt* out_pkt);
+    void log_pkt(struct gpv::gpv_t *out_pkt);
 
     void close_log_file() {SLB_trace.close();}
 
-    void print_counter(){cout << "[INFO] server1: " << counter[0]+1 << " server2: " << counter[1]+1 << " server3: " << counter[2]+1 << " server4: " << counter[3]+1 <<
-    " server5: " << counter[4]+1 << " server6: " << counter[5]+1 << endl;}
+    void print_counter(){cout << "[INFO] server1: " << counter[0] << " server2: " << counter[1] << " server3: " << counter[2] << " server4: " << counter[3] <<
+    " server5: " << counter[4] << " server6: " << counter[5] << endl;}
+
+    void print_numofGPVS();
 };
 
 

@@ -6,14 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/cygdrive/c/Users/maziy/CLionProjects/SLB/LoadBalancer.cpp
-iostream
--
-LoadBalancer.h
-/cygdrive/c/Users/maziy/CLionProjects/SLB/LoadBalancer.h
-pkt.h
-/cygdrive/c/Users/maziy/CLionProjects/SLB/pkt.h
-
 /cygdrive/c/Users/maziy/CLionProjects/SLB/LoadBalancer.h
 vector
 -
@@ -25,14 +17,8 @@ unordered_map
 -
 Server.h
 /cygdrive/c/Users/maziy/CLionProjects/SLB/Server.h
-
-/cygdrive/c/Users/maziy/CLionProjects/SLB/RandomPacketGenerator.cpp
-ctime
--
-cstdlib
--
-RandomPacketGenerator.h
-/cygdrive/c/Users/maziy/CLionProjects/SLB/RandomPacketGenerator.h
+pkt.h
+/cygdrive/c/Users/maziy/CLionProjects/SLB/pkt.h
 
 /cygdrive/c/Users/maziy/CLionProjects/SLB/RandomPacketGenerator.h
 vector
@@ -44,7 +30,21 @@ pkt.h
 stdint-gcc.h
 -
 
+/cygdrive/c/Users/maziy/CLionProjects/SLB/main.cpp
+iostream
+-
+vector
+-
+RandomPacketGenerator.h
+/cygdrive/c/Users/maziy/CLionProjects/SLB/RandomPacketGenerator.h
+Server.h
+/cygdrive/c/Users/maziy/CLionProjects/SLB/Server.h
+LoadBalancer.h
+/cygdrive/c/Users/maziy/CLionProjects/SLB/LoadBalancer.h
+
 /cygdrive/c/Users/maziy/CLionProjects/SLB/pkt.h
 stdint-gcc.h
+-
+iostream
 -
 

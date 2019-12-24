@@ -22,6 +22,7 @@
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectId" id="1Unp3D29cW5VhYvdspokwmBSNQB" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -57,7 +58,8 @@
       <option name="presentableId" value="Default" />
       <updated>1576002012267</updated>
       <workItem from="1576002014688" duration="6366000" />
-      <workItem from="1576166007401" duration="33278000" />
+      <workItem from="1576166007401" duration="34067000" />
+      <workItem from="1576866400636" duration="37939000" />
     </task>
     <servers />
   </component>

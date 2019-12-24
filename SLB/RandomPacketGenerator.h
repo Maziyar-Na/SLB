@@ -29,7 +29,7 @@ public:
     dstPorts(dstPorts_),
     protos(protos_){}
 
-    struct pkt* generate();
+    struct gpv::gpv_t* generate();
 };
 
 
